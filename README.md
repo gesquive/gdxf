@@ -1,3 +1,3 @@
-# xfer
+# gdxf
 
-A simple container to xfer data
+A simple container

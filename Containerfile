@@ -3,9 +3,9 @@ FROM docker.io/library/alpine:3.20
 RUN apk update && apk add --no-cache ca-certificates tzdata && update-ca-certificates
 RUN apk update && apk add --no-cache sudo git openssh-client bash curl rsync vim
 
-ARG USER=xfer
+ARG USER=gdx
 RUN addgroup -g 1000 $USER \
-    && adduser -u 1000 -G $USER -h /home/$USER -s /bin/bash -D $USER \
+    && adduser -u 1000 -G $USER -h /home -s /bin/bash -D $USER \
     && mkdir -p /etc/sudoers.d \
     && echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER \
     && chmod 0440 /etc/sudoers.d/$USER
